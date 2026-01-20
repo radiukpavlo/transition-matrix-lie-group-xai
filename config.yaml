@@ -1,0 +1,41 @@
+# K-Dense Configuration File
+# Global settings for the matrix analysis pipeline
+
+# Reproducibility
+random_seed: 42
+
+# Paths
+paths:
+  inputs:
+    synthetic_primary: "inputs/synthetic/primary/"
+    synthetic_sensitivity: "inputs/synthetic/sensitivity/"
+  outputs:
+    logs: "outputs/logs/"
+    synthetic_figures: "outputs/synthetic/figures/"
+    mnist_figures: "outputs/mnist/figures/"
+    mnist_models: "outputs/mnist/models/"
+    mnist_matrices: "outputs/mnist/matrices/"
+
+# Algorithm Parameters
+parameters:
+  # Lambda sweep for regularization
+  lambda_sweep:
+    start: 0.01
+    end: 10.0
+    num_points: 50
+    log_scale: true
+
+  # Epsilon for convergence tolerance
+  epsilon: 1.0e-6
+
+  # Tau for threshold operations
+  tau: 0.1
+
+  # Maximum iterations for iterative algorithms
+  max_iterations: 1000
+
+# Decimal Notation Interpretation
+# For repeating decimals in the manuscript:
+# Primary:    0.8(4) -> 0.844444444, -0.(4) -> -0.444444444
+# Sensitivity: 0.8(4) -> 0.84,        -0.(4) -> -0.44
+decimal_precision: 9  # Number of decimal places for repeating decimals

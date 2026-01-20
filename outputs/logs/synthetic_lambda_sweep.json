@@ -1,0 +1,98 @@
+[
+  {
+    "dataset_type": "primary",
+    "lambda": 0.0,
+    "MSE_fid": 0.0036699553610739467,
+    "Sym_err": 13077.171818480983,
+    "n_singular_values": 20,
+    "condition_number": 88.7061046582112
+  },
+  {
+    "dataset_type": "primary",
+    "lambda": 0.1,
+    "MSE_fid": 0.005213601858505232,
+    "Sym_err": 0.12859565195070022,
+    "n_singular_values": 20,
+    "condition_number": 134.8845327187514
+  },
+  {
+    "dataset_type": "primary",
+    "lambda": 0.25,
+    "MSE_fid": 0.00523870335269827,
+    "Sym_err": 0.045523438557790424,
+    "n_singular_values": 20,
+    "condition_number": 304.2664575298643
+  },
+  {
+    "dataset_type": "primary",
+    "lambda": 0.5,
+    "MSE_fid": 0.005243958329412852,
+    "Sym_err": 0.0424765207351249,
+    "n_singular_values": 20,
+    "condition_number": 598.7338510088375
+  },
+  {
+    "dataset_type": "primary",
+    "lambda": 1.0,
+    "MSE_fid": 0.005249834937998358,
+    "Sym_err": 0.04183763615243343,
+    "n_singular_values": 20,
+    "condition_number": 1192.532855965556
+  },
+  {
+    "dataset_type": "primary",
+    "lambda": 2.0,
+    "MSE_fid": 0.005315326073142529,
+    "Sym_err": 0.04023872118632454,
+    "n_singular_values": 20,
+    "condition_number": 2382.59932592668
+  },
+  {
+    "dataset_type": "sensitivity",
+    "lambda": 0.0,
+    "MSE_fid": 0.003656523083185976,
+    "Sym_err": 13386.538246826633,
+    "n_singular_values": 20,
+    "condition_number": 89.19310555731009
+  },
+  {
+    "dataset_type": "sensitivity",
+    "lambda": 0.1,
+    "MSE_fid": 0.005197471952326586,
+    "Sym_err": 0.12806949104336332,
+    "n_singular_values": 20,
+    "condition_number": 135.63058880356715
+  },
+  {
+    "dataset_type": "sensitivity",
+    "lambda": 0.25,
+    "MSE_fid": 0.005222421480296368,
+    "Sym_err": 0.04549560281749435,
+    "n_singular_values": 20,
+    "condition_number": 305.95894051870965
+  },
+  {
+    "dataset_type": "sensitivity",
+    "lambda": 0.5,
+    "MSE_fid": 0.005227644380453987,
+    "Sym_err": 0.0424675602478439,
+    "n_singular_values": 20,
+    "condition_number": 602.0669504495866
+  },
+  {
+    "dataset_type": "sensitivity",
+    "lambda": 1.0,
+    "MSE_fid": 0.0052335089550825204,
+    "Sym_err": 0.04183030795049433,
+    "n_singular_values": 20,
+    "condition_number": 1199.1729236583399
+  },
+  {
+    "dataset_type": "sensitivity",
+    "lambda": 2.0,
+    "MSE_fid": 0.005298955322863816,
+    "Sym_err": 0.040232521344330335,
+    "n_singular_values": 20,
+    "condition_number": 2395.866397108897
+  }
+]

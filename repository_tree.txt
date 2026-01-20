@@ -1,0 +1,108 @@
+session_20260120_162040_ff659490feac/
+├── data
+│   └── MNIST
+│       └── raw
+│           ├── t10k-images-idx3-ubyte
+│           ├── t10k-images-idx3-ubyte.gz
+│           ├── t10k-labels-idx1-ubyte
+│           ├── t10k-labels-idx1-ubyte.gz
+│           ├── train-images-idx3-ubyte
+│           ├── train-images-idx3-ubyte.gz
+│           ├── train-labels-idx1-ubyte
+│           └── train-labels-idx1-ubyte.gz
+├── figures
+├── inputs
+│   └── synthetic
+│       ├── primary
+│       │   ├── A.json
+│       │   ├── B.json
+│       │   └── T_old.json
+│       └── sensitivity
+│           ├── A.json
+│           ├── B.json
+│           └── T_old.json
+├── logs
+│   ├── step1_data_population_summary.txt
+│   ├── step6_execution.log
+│   └── visualization_output.log
+├── outputs
+│   ├── logs
+│   │   ├── mnist_training_log.json
+│   │   ├── synthetic_lambda_sweep.json
+│   │   └── synthetic_step2_metrics.txt
+│   ├── mnist
+│   │   ├── figures
+│   │   │   ├── fig01_train_loss.png
+│   │   │   ├── fig02_train_accuracy.png
+│   │   │   ├── fig03_reconstruction_grid_old.png
+│   │   │   ├── fig04_reconstruction_grid_new.png
+│   │   │   ├── fig05_ssim_histogram.png
+│   │   │   ├── fig06_psnr_histogram.png
+│   │   │   ├── fig07_symmetry_vs_lambda.png
+│   │   │   ├── fig08_robustness_ssim.png
+│   │   │   ├── fig09_robustness_psnr.png
+│   │   │   └── fig10_robustness_grid.png
+│   │   ├── matrices
+│   │   │   ├── A_subset.npy
+│   │   │   ├── B_subset.npy
+│   │   │   ├── JA.npy
+│   │   │   ├── JB.npy
+│   │   │   ├── T_new.npy
+│   │   │   ├── T_old.npy
+│   │   │   └── computation_metadata.json
+│   │   ├── models
+│   │   │   ├── mnist_cnn.pt
+│   │   │   └── mnist_cnn_best.pt
+│   │   └── results_step6.json
+│   └── synthetic
+│       ├── figures
+│       │   ├── fig01_mds_A.png
+│       │   ├── fig02_mds_B.png
+│       │   ├── fig03_heatmap_T_old.png
+│       │   ├── fig04_heatmap_T_new.png
+│       │   ├── fig05_heatmap_JA.png
+│       │   ├── fig06_heatmap_JB.png
+│       │   ├── fig07_singular_spectrum.png
+│       │   ├── fig08_tradeoff_mse.png
+│       │   ├── fig09_tradeoff_symmetry.png
+│       │   └── fig10_robustness_scatter.png
+│       ├── primary
+│       │   ├── matrices
+│       │   │   ├── JA.json
+│       │   │   ├── JB.json
+│       │   │   └── T_new.json
+│       │   └── robustness_results.json
+│       └── sensitivity
+│           ├── matrices
+│           │   ├── JA.json
+│           │   ├── JB.json
+│           │   └── T_new.json
+│           └── robustness_results.json
+├── reports
+│   └── implementation_plan.md
+├── results
+├── scripts
+│   ├── 01_extract_matrices.py
+│   ├── 02_synthetic_generators.py
+│   ├── 03_synthetic_optimization.py
+│   ├── 04_mnist_training.py
+│   ├── 05_mnist_generators.py
+│   ├── 06_mnist_optimization.py
+│   ├── 07_visualize_results.py
+│   └── 08_finalize_project.py
+├── user_data
+├── workflow
+├── README.md
+├── STEP7_COMPLETION_REPORT.md
+├── config.yaml
+├── execution_summary_step2.md
+├── execution_summary_step3.md
+├── execution_summary_step4.md
+├── execution_summary_step5.md
+├── execution_summary_step6.md
+├── execution_summary_step7.md
+├── manifest.json
+├── pyproject.toml
+├── requirements.txt
+├── science_methodology_agent_responses.log
+└── update_manifest.py

@@ -1,0 +1,24 @@
+
+================================================================================
+Dataset: primary
+================================================================================
+Baseline Fidelity MSE: 3.99840114e-02
+Matrix A shape: (15, 5)
+Matrix B shape: (15, 4)
+Generator J_A shape: (5, 5)
+Generator J_B shape: (4, 4)
+Generator J_A norm: 179.566305
+Generator J_B norm: 105.324180
+Epsilon (rotation angle): 0.01 rad
+
+================================================================================
+Dataset: sensitivity
+================================================================================
+Baseline Fidelity MSE: 3.99843386e-02
+Matrix A shape: (15, 5)
+Matrix B shape: (15, 4)
+Generator J_A shape: (5, 5)
+Generator J_B shape: (4, 4)
+Generator J_A norm: 179.665432
+Generator J_B norm: 105.324180
+Epsilon (rotation angle): 0.01 rad

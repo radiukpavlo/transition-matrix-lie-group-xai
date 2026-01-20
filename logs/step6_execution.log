@@ -1,0 +1,198 @@
+Using device: cpu
+================================================================================
+Step 6: Large-Scale Equivariant Optimization (MNIST)
+================================================================================
+
+=== Loading Matrices ===
+A_subset shape: (5000, 490)
+B_subset shape: (5000, 784)
+JA shape: (490, 490)
+JB shape: (784, 784)
+Load time: 0.01s
+
+=== Computing Baseline T_old ===
+T_old shape: torch.Size([784, 490])
+Reconstruction error (Frobenius): 906.163757
+Relative error: 0.472041
+Computation time: 0.07s
+
+=== Computing Equivariant T_new with L-BFGS ===
+Lambda sweep: [0.1, 1.0, 10.0]
+
+--- Lambda = 0.1 ---
+
+=== Computing Baseline T_old ===
+T_old shape: torch.Size([784, 490])
+Reconstruction error (Frobenius): 906.163757
+Relative error: 0.472041
+Computation time: 0.06s
+  Step 0/25: Loss=8.22e+05, Fidelity=8.21e+05, Symmetry=1.25e+04
+  Step 5/25: Loss=8.22e+05, Fidelity=8.21e+05, Symmetry=1.24e+04
+  Step 10/25: Loss=8.22e+05, Fidelity=8.21e+05, Symmetry=1.24e+04
+  Step 15/25: Loss=8.22e+05, Fidelity=8.21e+05, Symmetry=1.24e+04
+  Step 20/25: Loss=8.22e+05, Fidelity=8.21e+05, Symmetry=1.24e+04
+  Final fidelity error: 906.197693 (relative: 0.472059)
+  Final symmetry error: 111.375656
+  Combined score: 1.100668
+  Time: 1.90s
+
+--- Lambda = 1.0 ---
+
+=== Computing Baseline T_old ===
+T_old shape: torch.Size([784, 490])
+Reconstruction error (Frobenius): 906.163757
+Relative error: 0.472041
+Computation time: 0.06s
+  Step 0/25: Loss=8.31e+05, Fidelity=8.23e+05, Symmetry=7.79e+03
+  Step 5/25: Loss=8.28e+05, Fidelity=8.23e+05, Symmetry=5.07e+03
+  Step 10/25: Loss=8.27e+05, Fidelity=8.23e+05, Symmetry=4.26e+03
+  Step 15/25: Loss=8.27e+05, Fidelity=8.22e+05, Symmetry=4.04e+03
+  Step 20/25: Loss=8.26e+05, Fidelity=8.22e+05, Symmetry=3.94e+03
+  Final fidelity error: 906.856995 (relative: 0.472402)
+  Final symmetry error: 62.743587
+  Combined score: 4.633356
+  Time: 4.70s
+
+--- Lambda = 10.0 ---
+
+=== Computing Baseline T_old ===
+T_old shape: torch.Size([784, 490])
+Reconstruction error (Frobenius): 906.163757
+Relative error: 0.472041
+Computation time: 0.07s
+  Step 0/25: Loss=8.72e+05, Fidelity=8.34e+05, Symmetry=3.87e+03
+  Step 5/25: Loss=8.55e+05, Fidelity=8.31e+05, Symmetry=2.32e+03
+  Step 10/25: Loss=8.51e+05, Fidelity=8.31e+05, Symmetry=2.07e+03
+  Step 15/25: Loss=8.50e+05, Fidelity=8.29e+05, Symmetry=2.11e+03
+  Step 20/25: Loss=8.49e+05, Fidelity=8.29e+05, Symmetry=2.08e+03
+  Final fidelity error: 910.156006 (relative: 0.474121)
+  Final symmetry error: 45.748486
+  Combined score: 33.542040
+  Time: 5.30s
+
+=== Best Lambda: 0.1 ===
+Best combined score: 1.100668
+
+=== Evaluating Reconstruction (T_old) ===
+Computing SSIM and PSNR for each sample...
+  Progress: 0/5000
+  Progress: 500/5000
+  Progress: 1000/5000
+  Progress: 1500/5000
+  Progress: 2000/5000
+  Progress: 2500/5000
+  Progress: 3000/5000
+  Progress: 3500/5000
+  Progress: 4000/5000
+  Progress: 4500/5000
+SSIM: 0.6142 ± 0.4166
+PSNR: 7.21 ± 2.07 dB
+Fidelity error: 906.163757
+Relative error: 0.472041
+Evaluation time: 0.33s
+
+=== Evaluating Reconstruction (T_new) ===
+Computing SSIM and PSNR for each sample...
+  Progress: 0/5000
+  Progress: 500/5000
+  Progress: 1000/5000
+  Progress: 1500/5000
+  Progress: 2000/5000
+  Progress: 2500/5000
+  Progress: 3000/5000
+  Progress: 3500/5000
+  Progress: 4000/5000
+  Progress: 4500/5000
+SSIM: 0.6143 ± 0.4164
+PSNR: 7.21 ± 2.07 dB
+Fidelity error: 906.197693
+Relative error: 0.472059
+Evaluation time: 0.32s
+
+=== Symmetry Errors ===
+T_old symmetry error: 117.732300
+T_new symmetry error: 111.375656
+Improvement: 6.356644
+
+=== Robustness Test ===
+Testing angles: [-30, -15, 15, 30]
+
+--- Angle: -30° ---
+  Computing metrics for 500 samples...
+    Progress: 0/500
+    Progress: 100/500
+    Progress: 200/500
+    Progress: 300/500
+    Progress: 400/500
+  T_old - SSIM: 0.3622, PSNR: 5.70 dB
+  T_new - SSIM: 0.3619, PSNR: 5.70 dB
+  Improvement - SSIM: -0.0003, PSNR: +0.00 dB
+  Time: 0.60s
+
+--- Angle: -15° ---
+  Computing metrics for 500 samples...
+    Progress: 0/500
+    Progress: 100/500
+    Progress: 200/500
+    Progress: 300/500
+    Progress: 400/500
+  T_old - SSIM: 0.5214, PSNR: 7.28 dB
+  T_new - SSIM: 0.5216, PSNR: 7.28 dB
+  Improvement - SSIM: +0.0001, PSNR: +0.00 dB
+  Time: 0.57s
+
+--- Angle: 15° ---
+  Computing metrics for 500 samples...
+    Progress: 0/500
+    Progress: 100/500
+    Progress: 200/500
+    Progress: 300/500
+    Progress: 400/500
+  T_old - SSIM: 0.4915, PSNR: 7.05 dB
+  T_new - SSIM: 0.4920, PSNR: 7.06 dB
+  Improvement - SSIM: +0.0005, PSNR: +0.00 dB
+  Time: 0.58s
+
+--- Angle: 30° ---
+  Computing metrics for 500 samples...
+    Progress: 0/500
+    Progress: 100/500
+    Progress: 200/500
+    Progress: 300/500
+    Progress: 400/500
+  T_old - SSIM: 0.3832, PSNR: 5.50 dB
+  T_new - SSIM: 0.3841, PSNR: 5.50 dB
+  Improvement - SSIM: +0.0009, PSNR: +0.00 dB
+  Time: 0.59s
+
+=== Saving Outputs ===
+Saved: /app/sandbox/session_20260120_162040_ff659490feac/outputs/mnist/matrices/T_old.npy
+Saved: /app/sandbox/session_20260120_162040_ff659490feac/outputs/mnist/matrices/T_new.npy
+Saved: /app/sandbox/session_20260120_162040_ff659490feac/outputs/mnist/results_step6.json
+
+================================================================================
+EXECUTION SUMMARY
+================================================================================
+
+Best lambda: 0.1
+
+Reconstruction Quality:
+  T_old - SSIM: 0.6142, PSNR: 7.21 dB
+  T_new - SSIM: 0.6143, PSNR: 7.21 dB
+  Improvement: SSIM +0.0001, PSNR -0.00 dB
+
+Symmetry Error:
+  T_old: 117.732300
+  T_new: 111.375656
+  Reduction: 6.356644 (5.4%)
+
+Robustness (average over all angles):
+  T_old - SSIM: 0.4396, PSNR: 6.38 dB
+  T_new - SSIM: 0.4399, PSNR: 6.38 dB
+  Improvement: SSIM +0.0003, PSNR +0.00 dB
+
+Total execution time: 15.06s (0.3 min)
+
+================================================================================
+Step 6 completed successfully!
+================================================================================

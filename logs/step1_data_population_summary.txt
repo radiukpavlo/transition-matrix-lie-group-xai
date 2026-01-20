@@ -1,0 +1,118 @@
+================================================================================
+EXECUTION SUMMARY: Step 1 Data Population - Actual Matrix Values
+================================================================================
+
+Task: Update matrix extraction script with actual numerical values from
+      manuscript Appendix 1.1 and regenerate input JSON files.
+
+Date: January 20, 2026
+Session: 20260120_162040_ff659490feac
+
+================================================================================
+COMPLETED TASKS
+================================================================================
+
+✓ 1. Updated scripts/01_extract_matrices.py with actual manuscript data
+   - Matrix A (15×5): All 15 rows with actual values from Appendix 1.1
+   - Matrix B (15×4): All 15 rows with high-precision values
+   - Matrix T_old (5×4): Updated from placeholder 2×2 to actual 5×4 dimensions
+
+✓ 2. Fixed repeating decimal conversion function
+   - Primary interpretation: 9 decimal places (e.g., 0.844444444)
+   - Sensitivity interpretation: 2 decimal places (e.g., 0.84)
+   - Corrected sensitivity function to properly handle repeating decimals
+
+✓ 3. Executed matrix extraction script successfully
+   - Generated 6 JSON files (3 primary + 3 sensitivity)
+   - All matrices saved with metadata (shape, dtype, source)
+   - Verified dimensions and conversion accuracy
+
+✓ 4. Updated documentation
+   - README.md: Reflected actual data status and corrected dimensions
+   - manifest.json: Updated with actual data flags and examples
+
+================================================================================
+KEY OUTPUTS
+================================================================================
+
+Primary Interpretation (9 decimal places):
+- inputs/synthetic/primary/A.json     (15×5)
+- inputs/synthetic/primary/B.json     (15×4)
+- inputs/synthetic/primary/T_old.json (5×4) ← DIMENSION CHANGE from 2×2
+
+Sensitivity Interpretation (2 decimal places):
+- inputs/synthetic/sensitivity/A.json     (15×5)
+- inputs/synthetic/sensitivity/B.json     (15×4)
+- inputs/synthetic/sensitivity/T_old.json (5×4) ← DIMENSION CHANGE from 2×2
+
+================================================================================
+VERIFICATION RESULTS
+================================================================================
+
+✅ Matrix Dimensions:
+   - A: (15, 5) - Verified
+   - B: (15, 4) - Verified
+   - T_old: (5, 4) - Verified ← Previously 2×2
+
+✅ Repeating Decimal Conversion (Row 13 of Matrix A):
+   - Primary interpretation:
+     * 0.8(4)  → 0.844444444 ✓
+     * -0.(4)  → -0.444444444 ✓
+
+   - Sensitivity interpretation:
+     * 0.8(4)  → 0.84 ✓
+     * -0.(4)  → -0.44 ✓
+
+✅ Interpretation Differences:
+   - Max difference in Matrix A: 0.004444444
+   - Max difference in Matrix B: 0.000000000 (no repeating decimals)
+
+✅ Data Provenance:
+   - All values sourced from manuscript Appendix 1.1
+   - Metadata included in all JSON files
+
+================================================================================
+TECHNICAL DETAILS
+================================================================================
+
+Script Updates:
+1. create_matrices_primary()
+   - Replaced placeholder arrays with actual values
+   - Applied convert_repeating_decimal_primary() to "0.8(4)" and "-0.(4)"
+
+2. create_matrices_sensitivity()
+   - Replaced placeholder arrays with actual values
+   - Applied convert_repeating_decimal_sensitivity() to repeating decimals
+   - Fixed conversion function to use 2 decimal places consistently
+
+3. convert_repeating_decimal_sensitivity()
+   - Enhanced to properly handle repeating decimals with 2 decimal places
+   - Fixed issue where "-0.(4)" was generating "-0.4" instead of "-0.44"
+
+Commands Executed:
+```bash
+python3 scripts/01_extract_matrices.py  # Initial run
+python3 scripts/01_extract_matrices.py  # Re-run after fixing conversion function
+```
+
+================================================================================
+SUCCESS CRITERIA STATUS
+================================================================================
+
+✅ scripts/01_extract_matrices.py contains actual manuscript data
+✅ Input JSON files regenerated with correct values
+✅ T_old.json has dimensions [5, 4] (previously [2, 2])
+✅ A.json correctly handles repeating decimal strings via conversion logic
+
+All success criteria met. Task complete.
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+Step 2: Core Matrix Analysis Implementation
+- Implement matrix analysis algorithms using the actual data
+- Perform sensitivity analysis comparing primary vs. sensitivity interpretations
+- Generate visualizations and results
+
+================================================================================
